@@ -1,11 +1,4 @@
-// // ignore_for_file: public_member_api_docs, sort_constructors_first
-// // ignore_for_file: prefer_const_constructors
-
-import 'dart:typed_data';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:photo_editing_app/provider/app_image_provider.dart';
 import 'package:photo_editing_app/utils/media_query.dart';
 import 'package:provider/provider.dart';
@@ -39,30 +32,33 @@ class _AdjustScreenState extends State<AdjustScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const CloseButton(
+          style: ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.white)),
+        ),
         title: const Text(
           "Adjust",
           style: TextStyle(
             color: Colors.white,
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () async {
-              {
-                Uint8List? bytes = await screenshotController.capture();
-                appImageProvider.changeImage(bytes!);
-                if (!mounted) return;
-                // ignore: use_build_context_synchronously
-                Navigator.pop(context);
-              }
-            },
-            icon: const Icon(
-              CupertinoIcons.checkmark_alt,
-              color: Colors.green,
-              size: 35,
-            ),
-          )
-        ],
+        // actions: [
+        //   IconButton(
+        //     onPressed: () async {
+        //       {
+        //         Uint8List? bytes = await screenshotController.capture();
+        //         appImageProvider.changeImage(bytes!);
+        //         if (!mounted) return;
+        //         // ignore: use_build_context_synchronously
+        //         Navigator.pop(context);
+        //       }
+        //     },
+        //     icon: const Icon(
+        //       CupertinoIcons.checkmark_alt,
+        //       color: Colors.white,
+        //       size: 35,
+        //     ),
+        //   )
+        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),

@@ -2,7 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_editing_app/screens/discover_screen.dart';
+// import 'package:photo_editing_app/screens/discover_screen.dart';
 
 import 'package:photo_editing_app/screens/profile_screen.dart';
 import 'package:photo_editing_app/screens/choosing_screen.dart';
@@ -17,7 +17,7 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   final List pages = const [
-    DiscoverScreen(),
+    // DiscoverScreen(),
     ChoosingScreen(),
     ProfileScreen()
   ];
@@ -34,11 +34,11 @@ class _BottomBarState extends State<BottomBar> {
         index: BottomBar.page,
         height: 60,
         items: const <Widget>[
-          Icon(
-            CupertinoIcons.home,
-            size: 30,
-            color: Colors.white,
-          ),
+          // Icon(
+          //   CupertinoIcons.home,
+          //   size: 30,
+          //   color: Colors.white,
+          // ),
           Icon(
             CupertinoIcons.add,
             size: 30,

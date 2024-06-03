@@ -51,33 +51,33 @@ class _TextScreenState extends State<TextScreen> {
         Scaffold(
           backgroundColor: Colors.black,
           appBar: AppBar(
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
+            leading: const CloseButton(
+              style:
+                  ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.white)),
             ),
-            title: Text(
-              "Text",
-              style: GoogleFonts.lato(
+            title: const Text(
+              "Add Text",
+              style: TextStyle(
                 color: Colors.white,
               ),
             ),
             actions: [
               IconButton(
-                  onPressed: () async {
-                    {
-                      Uint8List? bytes = await controller.saveAsUint8List();
-                      appImageProvider.changeImage(bytes!);
-                      if (!mounted) return;
-                      // ignore: use_build_context_synchronously
-                      Navigator.pop(context);
-                    }
-                  },
-                  icon: const Icon(CupertinoIcons.checkmark_alt))
+                onPressed: () async {
+                  {
+                    Uint8List? bytes = await controller.saveAsUint8List();
+                    appImageProvider.changeImage(bytes!);
+                    if (!mounted) return;
+                    // ignore: use_build_context_synchronously
+                    Navigator.pop(context);
+                  }
+                },
+                icon: const Icon(
+                  Icons.done,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              )
             ],
           ),
           body: Center(
@@ -123,13 +123,20 @@ class _TextScreenState extends State<TextScreen> {
                     "BeautifulPeople",
                     "BeautyMountains",
                     "Billabong",
-                    "Billabong",
                     "BlackberryJam",
                     "BunchBlossoms",
                     "CinderelaRegular",
                     "Countryside",
                     "GrandHotel",
-                    "Halimun"
+                    "Halimun",
+                    "imagesemonJelly",
+                    "OpenSans",
+                    "Oswald",
+                    "Quicksand",
+                    "QuiteMagicalRegular",
+                    "Tomatoes",
+                    "TropicalAsianDemoRegular",
+                    "VeganStyle",
                   ],
                   textStyle: const TextStyle(color: Colors.white),
                   minFontSize: 10,
@@ -137,8 +144,14 @@ class _TextScreenState extends State<TextScreen> {
 
                   // textAlingment: textAlign,
                   decoration: EditorDecoration(
-                    doneButton: const Icon(Icons.close, color: Colors.white),
-                    fontFamily: const Icon(Icons.title, color: Colors.white),
+                    doneButton: const Icon(
+                      Icons.done,
+                      color: Colors.white,
+                    ),
+                    fontFamily: const Icon(
+                      Icons.title,
+                      color: Colors.white,
+                    ),
                     colorPalette:
                         const Icon(Icons.palette, color: Colors.white),
                     alignment: AlignmentDecoration(
