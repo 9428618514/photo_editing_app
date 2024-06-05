@@ -30,6 +30,7 @@ class _CropScreenState extends State<CropScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         leading: const CloseButton(
           style: ButtonStyle(iconColor: WidgetStatePropertyAll(Colors.white)),
@@ -49,6 +50,7 @@ class _CropScreenState extends State<CropScreen> {
               Uint8List bytes = data!.buffer.asUint8List();
               appImageProvider.changeImage(bytes);
               if (!mounted) return;
+              // ignore: use_build_context_synchronously
               Navigator.of(context).pop();
             },
             icon: const Icon(

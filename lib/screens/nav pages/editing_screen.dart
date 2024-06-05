@@ -1,4 +1,3 @@
-
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:photo_editing_app/provider/app_image_provider.dart';
 import 'package:photo_editing_app/screens/profile_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:screenshot/screenshot.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 // import 'package:permission_handler/permission_handler.dart';
@@ -44,11 +44,13 @@ class _EditingScreenState extends State<EditingScreen> {
     await [Permission.storage].request();
     if (await Permission.storage.isGranted) {
       await GallerySaver.saveImage(imageFile.path, albumName: "Edited Photos");
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Image saved to gallery and profile'),
       ));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text('Permission to access storage denied'),
       ));
     }
@@ -87,9 +89,10 @@ class _EditingScreenState extends State<EditingScreen> {
                 await _saveImage(image);
               }
               Navigator.push(
+                  // ignore: use_build_context_synchronously
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ProfileScreen(),
+                    builder: (context) => const ProfileScreen(),
                   ));
             },
             child: const Text(

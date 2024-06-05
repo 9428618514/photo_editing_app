@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_editing_app/provider/app_image_provider.dart';
 import 'package:photo_editing_app/utils/media_query.dart';
@@ -41,24 +44,24 @@ class _AdjustScreenState extends State<AdjustScreen> {
             color: Colors.white,
           ),
         ),
-        // actions: [
-        //   IconButton(
-        //     onPressed: () async {
-        //       {
-        //         Uint8List? bytes = await screenshotController.capture();
-        //         appImageProvider.changeImage(bytes!);
-        //         if (!mounted) return;
-        //         // ignore: use_build_context_synchronously
-        //         Navigator.pop(context);
-        //       }
-        //     },
-        //     icon: const Icon(
-        //       CupertinoIcons.checkmark_alt,
-        //       color: Colors.white,
-        //       size: 35,
-        //     ),
-        //   )
-        // ],
+        actions: [
+          IconButton(
+            onPressed: () async {
+              {
+                Uint8List? bytes = await screenshotController.capture();
+                appImageProvider.changeImage(bytes!);
+                if (!mounted) return;
+                // ignore: use_build_context_synchronously
+                Navigator.pop(context);
+              }
+            },
+            icon: const Icon(
+              CupertinoIcons.checkmark_alt,
+              color: Colors.white,
+              size: 35,
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -94,7 +97,12 @@ class _AdjustScreenState extends State<AdjustScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("brigtness"),
+                        const Text(
+                          "brigtness",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                         Expanded(
                           child: Slider(
                             min: -50,
@@ -113,7 +121,12 @@ class _AdjustScreenState extends State<AdjustScreen> {
                     ),
                     Row(
                       children: [
-                        Text("contrast"),
+                        const Text(
+                          "contrast",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                         Expanded(
                           child: Slider(
                             min: -50,
@@ -132,7 +145,12 @@ class _AdjustScreenState extends State<AdjustScreen> {
                     ),
                     Row(
                       children: [
-                        Text("hue"),
+                        const Text(
+                          "hue",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                         Expanded(
                           child: Slider(
                             min: -100,

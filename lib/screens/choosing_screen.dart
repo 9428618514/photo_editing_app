@@ -79,10 +79,20 @@ class _ChoosingScreenState extends State<ChoosingScreen> {
                       ),
                       ElevatedButton(
                         onPressed: () {
+                          // AppImagePicker(source: ImageSource.camera).pick(
+                          //     onPick: (File? image) {
+                          //   imageProvider.changeImageFile(image!);
+                          //   Navigator.of(context).pushNamed('/home');
+                          // });
                           AppImagePicker(source: ImageSource.camera).pick(
                               onPick: (File? image) {
-                            imageProvider.changeImageFile(image!);
-                            Navigator.of(context).pushNamed('/home');
+                            if (image == null) {
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/bottombar');
+                            } else {
+                              imageProvider.changeImageFile(image);
+                              Navigator.of(context).pushNamed('/home');
+                            }
                           });
                         },
                         child: const Text(

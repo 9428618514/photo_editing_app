@@ -1,6 +1,5 @@
 import 'dart:typed_data';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lindi_sticker_widget/lindi_controller.dart';
