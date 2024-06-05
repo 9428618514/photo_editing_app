@@ -115,8 +115,7 @@ class _FrameScreenState extends State<FrameScreen> {
                   Slider(
                     value: frameSize,
                     min: 0.0,
-                    max: 50.0,
-                    // divisions: 10,
+                    max: 100,
                     label: frameSize.round().toString(),
                     onChanged: (double value) {
                       log("slider:$value");
@@ -126,21 +125,25 @@ class _FrameScreenState extends State<FrameScreen> {
                     },
                   ),
                   const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // _buildColorButton(Colors.transparent),
-                      buildColorButton(Colors.green),
-                      buildColorButton(Colors.red),
-                      buildColorButton(Colors.blue),
-                      buildColorButton(Colors.yellow),
-                      buildColorButton(Colors.black),
-                      buildColorButton(Colors.white),
-                      buildColorButton(Colors.purpleAccent),
-                      buildColorButton(Colors.blueGrey),
-                      buildColorButton(Colors.cyan),
-                      buildColorButton(Colors.indigo),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // _buildColorButton(Colors.transparent),
+                        buildColorButton(Colors.green),
+                        buildColorButton(Colors.lightGreenAccent),
+                        buildColorButton(Colors.white),
+                        buildColorButton(Colors.red),
+                        buildColorButton(Colors.blue),
+                        buildColorButton(Colors.yellow),
+                        buildColorButton(Colors.black),
+                        buildColorButton(Colors.purpleAccent),
+                        buildColorButton(Colors.blueGrey),
+                        buildColorButton(Colors.cyan),
+                        buildColorButton(Colors.indigo),
+                      ],
+                    ),
                   ),
                   const SizedBox(
                     height: 20,

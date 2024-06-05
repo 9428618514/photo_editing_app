@@ -1,46 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:photo_editing_app/provider/app_image_provider.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "Profile",
-            style: TextStyle(color: Colors.white, fontSize: 24),
-          ),
-          actions: const [
-            Icon(
-              Icons.save_alt_outlined,
-              size: 30,
-            )
-          ],
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple.shade200,
+        title: const Text(
+          'Profile',
+          style: TextStyle(color: Colors.white),
         ),
-        body: Column(
-          children: [
-            Expanded(
-              child: GridView.builder(
-                itemCount: 10,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1,
-                  crossAxisSpacing: 2,
-                  mainAxisSpacing: 2,
-                ),
-                itemBuilder: (context, index) {
-                  return Image.network(
-                      "https://images-na.ssl-images-amazon.com/images/G/01/PLF/Daily_Ritual/2020/SPRING-DRIVERS/DAILY-RITUAL-COTTON-PUFF-SLEEVE_DT_CC_379x304_1x._SY304_CB410865121_.jpg");
-                },
-              ),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+      ),
+      body: Consumer<AppImageProvider>(
+        builder: (context, appImageProvider, child) {
+          final savedImages = appImageProvider.savedImages;
+
+          if (savedImages.isEmpty) {
+            return const Center(
+              child: Text('No images saved'),
+            );
+          }
+
+          return GridView.builder(
+            padding: const EdgeInsets.all(8),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
             ),
-          ],
-        ));
+            itemCount: savedImages.length,
+            itemBuilder: (context, index) {
+              return Image.memory(savedImages[index]);
+            },
+          );
+        },
+      ),
+    );
   }
 }

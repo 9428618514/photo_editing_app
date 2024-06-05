@@ -100,7 +100,7 @@ class _AdjustScreenState extends State<AdjustScreen> {
                         const Text(
                           "brigtness",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         Expanded(
@@ -124,7 +124,7 @@ class _AdjustScreenState extends State<AdjustScreen> {
                         const Text(
                           "contrast",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         Expanded(
@@ -148,7 +148,7 @@ class _AdjustScreenState extends State<AdjustScreen> {
                         const Text(
                           "hue",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         Expanded(

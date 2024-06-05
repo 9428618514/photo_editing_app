@@ -6,6 +6,7 @@ import 'package:photo_editing_app/screens/nav%20pages/crop_screen.dart';
 import 'package:photo_editing_app/screens/nav%20pages/filter_screen.dart';
 import 'package:photo_editing_app/screens/nav%20pages/editing_screen.dart';
 import 'package:photo_editing_app/screens/nav%20pages/frame_screen.dart';
+import 'package:photo_editing_app/screens/nav%20pages/sticker_screen.dart';
 import 'package:photo_editing_app/screens/outbording_screen.dart';
 import 'package:photo_editing_app/screens/choosing_screen.dart';
 import 'package:photo_editing_app/screens/nav%20pages/text_screen.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         '/adjust': (_) => const AdjustScreen(),
         '/text': (_) => const TextScreen(),
         '/frame': (_) => const FrameScreen(),
+        '/sticker': (_) => const StickerScreen(),
       },
       initialRoute: '/',
     );

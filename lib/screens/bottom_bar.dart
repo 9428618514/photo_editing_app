@@ -16,7 +16,7 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  final List pages = const [
+  final List pages = [
     // DiscoverScreen(),
     ChoosingScreen(),
     ProfileScreen()

@@ -52,6 +52,7 @@ dependencies:
   gallery_saver_updated: ^3.0.0
   permission_handler: ^11.3.1
   flutter_launcher_icons: ^0.13.1
+  draggable_widget: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,13 @@ flutter:
     - images/
     - images/edit_icons/
     - images/frame/
+    - images/sticker/
+    - images/sticker/animal/
+    - images/sticker/man/
+    - images/sticker/month/
+    - images/sticker/nature/
+    - images/sticker/wish/
+    - images/sticker/happy/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

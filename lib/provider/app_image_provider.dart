@@ -5,17 +5,12 @@ import 'package:flutter/material.dart';
 
 class AppImageProvider extends ChangeNotifier {
   Uint8List? currentImage;
-  double _currentImageHeight = 0;
-  double _currentImageWidth = 0;
-  double get currentImageHeight => _currentImageHeight;
-  double get currentImageWidth => _currentImageWidth;
-  Uint8List? get current => currentImage;
-  void setImage(Uint8List images, double height, double width) {
-    _currentImageHeight = height;
-    _currentImageWidth = width;
-    currentImage = images;
-    notifyListeners();
-  }
+  List<Uint8List> savedImage = [];
+
+  Uint8List? get image => currentImage;
+  List<Uint8List> get savedImages => savedImage;
+
+  // Uint8List? get current => currentImage;
 
   changeImageFile(File image) {
     currentImage = image.readAsBytesSync();
@@ -24,6 +19,16 @@ class AppImageProvider extends ChangeNotifier {
 
   changeImage(Uint8List image) {
     currentImage = image;
+    notifyListeners();
+  }
+
+  setImage(Uint8List image) {
+    image = image;
+    notifyListeners();
+  }
+
+  savedImageforProfile(Uint8List image) {
+    savedImage.add(image);
     notifyListeners();
   }
 }
