@@ -74,7 +74,7 @@ class _TextScreenState extends State<TextScreen> {
                 icon: const Icon(
                   Icons.done,
                   color: Colors.white,
-                  size: 30,
+                  size: 29,
                 ),
               )
             ],
@@ -103,10 +103,19 @@ class _TextScreenState extends State<TextScreen> {
               alignment: Alignment.center,
               width: double.infinity,
               height: 60,
-              decoration: const BoxDecoration(color: Colors.black),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                border: Border.all(width: 5, color: Colors.white),
+                borderRadius: BorderRadius.circular(
+                  5,
+                ),
+              ),
               child: Text(
                 "Add Text",
-                style: GoogleFonts.lato(color: Colors.white),
+                style: GoogleFonts.lato(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
               ),
             ),
           ),

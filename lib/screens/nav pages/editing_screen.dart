@@ -143,7 +143,10 @@ class _EditingScreenState extends State<EditingScreen> {
             },
             child: const Text(
               'Save',
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
             ),
           ),
         ],

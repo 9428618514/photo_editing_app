@@ -23,7 +23,7 @@ class _StickerScreenState extends State<StickerScreen> {
   bool editor = false;
 
   late LindiController controller = LindiController(
-    borderColor: Colors.white,
+    // borderColor: Colors.white,
     iconColor: Colors.black,
     showDone: true,
     showClose: true,
@@ -60,6 +60,9 @@ class _StickerScreenState extends State<StickerScreen> {
         actions: [
           IconButton(
             onPressed: () async {
+              setState(() {
+                controller.clearAllBorders();
+              });
               try {
                 Uint8List? bytes = await screenshotController.capture();
 
@@ -82,7 +85,7 @@ class _StickerScreenState extends State<StickerScreen> {
             icon: const Icon(
               CupertinoIcons.checkmark_alt,
               color: Colors.white,
-              size: 35,
+              size: 29,
             ),
           )
         ],
@@ -118,10 +121,12 @@ class _StickerScreenState extends State<StickerScreen> {
         color: Colors.black,
         height: 100,
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+              // scrollDirection: Axis.horizontal,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: Sticker.stickerCategories.keys.map((category) {
                   return GestureDetector(
                     onTap: () {

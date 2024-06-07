@@ -100,7 +100,7 @@ class _AdjustScreenState extends State<AdjustScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          "brigtness ",
+                          "brightness ",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
