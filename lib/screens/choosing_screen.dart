@@ -56,51 +56,50 @@ class _ChoosingScreenState extends State<ChoosingScreen> {
                 child: Container(),
               ),
               Expanded(
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          AppImagePicker(source: ImageSource.gallery).pick(
-                              onPick: (File? image) {
-                            if (image == null) {
-                              Navigator.of(context)
-                                  .pushReplacementNamed('/bottombar');
-                            } else {
-                              imageProvider.changeImageFile(image);
-                              Navigator.of(context).pushNamed('/home');
-                            }
-                          });
-                        },
-                        child: const Text(
-                          "Gallary",
-                        ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(),
+                      onPressed: () {
+                        AppImagePicker(source: ImageSource.gallery).pick(
+                            onPick: (File? image) {
+                          if (image == null) {
+                            Navigator.of(context)
+                                .pushReplacementNamed('/bottombar');
+                          } else {
+                            imageProvider.changeImageFile(image);
+                            Navigator.of(context).pushNamed('/home');
+                          }
+                        });
+                      },
+                      child: const Text(
+                        "Gallary",
                       ),
-                      ElevatedButton(
-                        onPressed: () {
-                          // AppImagePicker(source: ImageSource.camera).pick(
-                          //     onPick: (File? image) {
-                          //   imageProvider.changeImageFile(image!);
-                          //   Navigator.of(context).pushNamed('/home');
-                          // });
-                          AppImagePicker(source: ImageSource.camera).pick(
-                              onPick: (File? image) {
-                            if (image == null) {
-                              Navigator.of(context)
-                                  .pushReplacementNamed('/bottombar');
-                            } else {
-                              imageProvider.changeImageFile(image);
-                              Navigator.of(context).pushNamed('/home');
-                            }
-                          });
-                        },
-                        child: const Text(
-                          "Camera",
-                        ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // AppImagePicker(source: ImageSource.camera).pick(
+                        //     onPick: (File? image) {
+                        //   imageProvider.changeImageFile(image!);
+                        //   Navigator.of(context).pushNamed('/home');
+                        // });
+                        AppImagePicker(source: ImageSource.camera).pick(
+                            onPick: (File? image) {
+                          if (image == null) {
+                            Navigator.of(context)
+                                .pushReplacementNamed('/bottombar');
+                          } else {
+                            imageProvider.changeImageFile(image);
+                            Navigator.of(context).pushNamed('/home');
+                          }
+                        });
+                      },
+                      child: const Text(
+                        "Camera",
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

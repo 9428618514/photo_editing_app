@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGE"/>
     <application
+    
         android:label="photo_editing_app"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
@@ -46,4 +47,5 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+    
 </manifest>

@@ -53,6 +53,10 @@ dependencies:
   permission_handler: ^11.3.1
   flutter_launcher_icons: ^0.13.1
   draggable_widget: ^2.0.0
+  shared_preferences: ^2.2.3
+  google_drive_wrapper: ^0.0.5
+  google_sign_in: ^6.2.1
+  googleapis: ^13.1.0
 
 dev_dependencies:
   flutter_test:

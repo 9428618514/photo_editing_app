@@ -75,13 +75,14 @@ class _AdjustScreenState extends State<AdjustScreen> {
                   builder: (BuildContext context, value, Widget? child) {
                     if (value.currentImage != null) {
                       return Screenshot(
-                          controller: screenshotController,
-                          child: SimpleFX(
-                            imageSource: Image.memory(value.currentImage!),
-                            brightness: _brightness,
-                            hueRotation: _hue,
-                            saturation: _saturation,
-                          ));
+                        controller: screenshotController,
+                        child: SimpleFX(
+                          imageSource: Image.memory(value.currentImage!),
+                          brightness: _brightness,
+                          hueRotation: _hue,
+                          saturation: _saturation,
+                        ),
+                      );
                     }
                     return const Center(
                       child: CircularProgressIndicator(),
@@ -94,13 +95,15 @@ class _AdjustScreenState extends State<AdjustScreen> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          "brigtness",
+                          "brigtness ",
                           style: TextStyle(
                             color: Colors.black,
+                            fontSize: 20,
                           ),
                         ),
                         Expanded(
@@ -119,12 +122,14 @@ class _AdjustScreenState extends State<AdjustScreen> {
                         ),
                       ],
                     ),
+                    Divider(),
                     Row(
                       children: [
                         const Text(
-                          "contrast",
+                          "contrast  ",
                           style: TextStyle(
                             color: Colors.black,
+                            fontSize: 20,
                           ),
                         ),
                         Expanded(
@@ -143,12 +148,14 @@ class _AdjustScreenState extends State<AdjustScreen> {
                         ),
                       ],
                     ),
+                    Divider(),
                     Row(
                       children: [
                         const Text(
-                          "hue",
+                          "hue         ",
                           style: TextStyle(
                             color: Colors.black,
+                            fontSize: 20,
                           ),
                         ),
                         Expanded(
@@ -166,7 +173,8 @@ class _AdjustScreenState extends State<AdjustScreen> {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    Divider(),
                   ],
                 ),
               ),
